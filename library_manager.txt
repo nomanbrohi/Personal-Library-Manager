@@ -1,0 +1,82 @@
+from altair import Key
+
+
+print('Welcome to Personal Library Manager')
+
+library = [
+    {"title": "abc", "author":"aaa", "publication":"awa","genre":"bbb"},
+    {"title": "ppp", "author":"aaa", "publication":"awa","genre":"bbb"}
+]   # create a empty list of dictionary
+
+def add_book(): #create a function to add book 
+    print('\nPlease Enter your Books Details')  #takes user input to add a book in to library variable
+    input_title= input('Enter Book Title: ')
+    input_author= input('Enter Book Author: ')
+    input_publication= input('Enter Book Publication: ')
+    input_genre= input('Genre: ')
+    # input_read= input('Read: ')
+
+    new_book ={"title": input_title, "author":input_author, "publication":input_publication,"genre":input_genre} #take user input in to new_book variable
+
+    library.append(new_book) #append or add new_book variable into library variable 
+
+
+
+def remove_book(): #create a remove book function
+    print('remove function started')
+    title=(input("Enter Title to remove book: "))
+
+    for book in library:
+        print(book)
+        if book["title"].lower() == title.lower():
+            library.remove(book)
+            print("Book removed successfully")
+        else:
+            print("Book not found")
+
+
+def search_book(): #Create a search book function
+    titleAuthor = input("Please Enter Book Title or Author name: ")
+
+    for book in library:
+        if book["title"].lower() == titleAuthor.lower():
+            print(book)
+        else:
+            print('book is not in library')
+    
+
+def all_books():
+    for books in library:
+        for book in books:
+            print(f'{book}: {books.get(book)}')
+
+def stats():
+    for books in library:
+        length = len(library)
+    print(f'Total Books: {length}')
+
+
+
+def menu(): #create a menu to select option of library
+    menu_option: [] = ['Add a book', 'Remove a book', 'Search for a book', 'Display all books', 'Display statistics', 'Exit']
+
+
+    for i in range(1, len(menu_option)+1): #run loop to show all elements with index in menu_option
+        print(f'{i} - {menu_option[i-1]}')
+
+    user_input=int(input("Enter menu index: "))# take user input to select one option from the menu
+
+    if user_input:
+        # print(f"selected: {menu_option[user_input-1]}")
+        if user_input == 1: #if user select 1 option it will run add_book() function
+            add_book()
+        elif user_input == 2: #if user select 2 option it will run add_remove() function
+            remove_book()
+        elif user_input == 3: #if user select 2 option it will run add_remove() function
+            search_book()
+        elif user_input == 4:
+            all_books()
+        elif user_input == 5:
+            stats()
+
+menu()

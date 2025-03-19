@@ -1,2 +1,16 @@
 Personal Library Manager
 
+step 1:
+install uv in computer from the given command (pip install uv) or get more types for installation
+https://docs.astral.sh/uv/getting-started/installation/#pypi
+
+step 2: 
+create project folder
+
+step 3:
+create .py project file
+
+step 4:
+initializr uv in project folder uv init . it will automatically initialize uv and vertual environment in same folder
+
+install streamlit if you want to create project on streamlit
