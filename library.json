@@ -1,1 +1,2 @@
-[{"title": "abc", "author": "aaa", "publication": "ddd", "genre": "ee", "read": true}]
+[{"title": "The Hobbit", "author": "J.R.R. Tolkien", "publication": "1937", "genre": "Adventure", "read": true}, 
+{"title": "The Lord of the Rings", "author": "J.R.R Tolkien", "publication": "1954", "genre": "Fantasy", "read": false}]
